@@ -11,8 +11,8 @@ const nextConfig = {
 
     trailingSlash: true,
     skipTrailingSlashRedirect: true,
-    output: "export",
-    distDir: "docs"
+//    output: "export",
+//    distDir: "docs"
 }
 
 module.exports = nextConfig
