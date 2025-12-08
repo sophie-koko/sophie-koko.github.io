@@ -1,20 +1,6 @@
 
 import Image from 'next/image';
 
-import Link from "next/link";
-
- //  export function Home1() {
- //  return (
- //      <div className={styles.container}>
- //      <Head>
- //          <title>Sophie's Website</title>
- //          <meta name="description" content="Starter Web Site" />
- //          <link rel="icon" href="/favicon.ico" />
- //      </Head>
-
- //  ;
- //  }
-
 export default function Home() {
     return (
         <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans">
