@@ -1,0 +1,193 @@
+/* ── game container ──────────────────────────────────────────── */
+.tetrix-wrap {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  background: #000;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 48px rgba(0, 255, 101, 0.10), 0 4px 24px rgba(0,0,0,0.6);
+}
+
+.tetrix-game-area {
+  position: relative;
+  width: 100%;
+}
+
+.tetrix-canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #000;
+}
+
+/* ── overlay (start / game over) ─────────────────────────────── */
+.tetrix-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  background: rgba(0, 0, 0, 0.82);
+  padding: 32px 24px;
+}
+
+.tetrix-title-big {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 3.8rem;
+  font-weight: 900;
+  color: #00ff65;
+  text-shadow: 0 0 20px #00ff65, 0 0 50px #00aa44;
+  letter-spacing: 10px;
+}
+
+.tetrix-over {
+  color: #ff4444;
+  text-shadow: 0 0 20px #ff4444, 0 0 40px #aa0000;
+}
+
+.tetrix-sub {
+  font-family: 'Courier New', Courier, monospace;
+  color: #00cc44;
+  font-size: 1rem;
+  text-align: center;
+  max-width: 400px;
+  line-height: 1.7;
+}
+
+.tetrix-legend {
+  font-family: 'Courier New', Courier, monospace;
+  color: #006622;
+  font-size: 0.85rem;
+  text-align: center;
+  line-height: 2;
+}
+
+.tetrix-score-display {
+  font-family: 'Courier New', Courier, monospace;
+  color: #00ff65;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.tetrix-btn {
+  padding: 14px 52px;
+  background: transparent;
+  color: #00ff65;
+  border: 2px solid #00ff65;
+  border-radius: 8px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 4px;
+  text-shadow: 0 0 8px #00ff65;
+  box-shadow: 0 0 14px rgba(0, 255, 101, 0.25), inset 0 0 12px rgba(0, 255, 101, 0.05);
+  transition: box-shadow 0.15s, background 0.15s;
+}
+.tetrix-btn:hover {
+  background: rgba(0, 255, 101, 0.08);
+  box-shadow: 0 0 28px rgba(0, 255, 101, 0.5), inset 0 0 16px rgba(0, 255, 101, 0.1);
+}
+
+/* ── HUD ─────────────────────────────────────────────────────── */
+.tetrix-hud {
+  position: absolute;
+  top: 10px;
+  left: 14px;
+  right: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.95rem;
+  color: #009933;
+  pointer-events: none;
+  user-select: none;
+}
+.tetrix-hud strong { color: #00ff65; }
+
+.tetrix-hud-level {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #00ff65;
+  text-shadow: 0 0 8px #00aa44;
+}
+
+/* ── bottom input area ───────────────────────────────────────── */
+.tetrix-bottom {
+  padding: 14px 20px 16px;
+  background: #000;
+  border-top: 1px solid #002200;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.tetrix-flash-area {
+  min-height: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.tetrix-flash {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.1rem;
+  font-weight: 700;
+  animation: flashIn 0.12s ease-out;
+}
+.flash-ok  { color: #00ff65; text-shadow: 0 0 8px #00ff65; }
+.flash-err { color: #ff4444; }
+
+@keyframes flashIn {
+  from { opacity: 0; transform: scale(0.7); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.tetrix-form {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  max-width: 380px;
+}
+
+.tetrix-input {
+  flex: 1;
+  padding: 10px 16px;
+  background: #001100;
+  color: #00ff65;
+  border: 2px solid #003300;
+  border-radius: 8px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-align: center;
+  outline: none;
+  caret-color: #00ff65;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.tetrix-input:focus {
+  border-color: #00bb44;
+  box-shadow: 0 0 10px rgba(0, 187, 68, 0.3);
+}
+.tetrix-input::placeholder {
+  color: #003300;
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.tetrix-submit-btn {
+  padding: 10px 22px;
+  background: #00aa33;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.3rem;
+  font-weight: 900;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+.tetrix-submit-btn:hover { background: #00ff65; }
