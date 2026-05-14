@@ -26,7 +26,7 @@ export default function TetrixPage() {
       <p style={{
         fontFamily: 'Courier New, monospace',
         fontSize: '0.68rem',
-        color: '#004d1a',
+        color: '#2d9e5f',
         textAlign: 'center',
         maxWidth: '720px',
         margin: '14px auto 0',
